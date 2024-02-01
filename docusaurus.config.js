@@ -16,19 +16,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "graphql-markdown", // Usually your GitHub org/user name.
   projectName: "graphql-markdown-template", // Usually your repo name.
-  plugins: [
-    [
-      "@graphql-markdown/docusaurus",
-      {
-        schema: "./introspection/schema.graphql",
-        rootPath: "./docs", // docs will be generated under './docs/subgraph' (rootPath/baseURL)
-        baseURL: "subgraph",
-        loaders: {
-          GraphQLFileLoader: "@graphql-tools/graphql-file-loader", // local file schema
-        },
-      },
-    ],
-  ],
+  plugins: ["@graphql-markdown/docusaurus"],
   presets: [
     [
       "classic",
@@ -36,6 +24,7 @@ const config = {
       ({
         blog: false,
         docs: {
+          include: ["**/*.md", "**/*.mdx"],
           routeBasePath: "/",
           sidebarPath: "./sidebars.js",
         },

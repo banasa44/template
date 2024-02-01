@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: big-int
-title: BigInt
+id: block
+title: _Block_
 ---
 
 
@@ -45,15 +45,39 @@ No description
 
 
 ```graphql
-scalar BigInt
+type _Block_ {
+  hash: Bytes
+  number: Int!
+  timestamp: Int
+}
 ```
 
 
 
 
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>_Block_.<b>hash</b></code>](#)<Bullet />[`Bytes`](/subgraph/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> The hash of the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>_Block_.<b>number</b></code>](#)<Bullet />[`Int!`](/subgraph/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> The block number
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>_Block_.<b>timestamp</b></code>](#)<Bullet />[`Int`](/subgraph/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Integer representation of the timestamp stored in blocks for the chain
+> 
+
 
 
 ### Member Of
 
-[`Tournament_filter`](/subgraph/inputs/tournament-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Tournament`](/subgraph/objects/tournament)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TournamentPlayer_filter`](/subgraph/inputs/tournament-player-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TournamentPlayer`](/subgraph/objects/tournament-player)  <Badge class="badge badge--secondary" text="object"/>
+[`_Meta_`](/subgraph/objects/meta)  <Badge class="badge badge--secondary" text="object"/>
 

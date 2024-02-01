@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: big-int
-title: BigInt
+id: derived-from
+title: derivedFrom
 ---
 
 
@@ -41,19 +41,25 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+creates a virtual field on the entity that may be queried but cannot be set manually through the mappings API.
 
 
 ```graphql
-scalar BigInt
+directive @derivedFrom(
+  field: String!
+) on FIELD_DEFINITION
 ```
 
 
 
 
+### Arguments
+
+#### [<code style={{ fontWeight: 'normal' }}>derivedFrom.<b>field</b></code>](#)<Bullet />[`String!`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
 
 
-### Member Of
-
-[`Tournament_filter`](/subgraph/inputs/tournament-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Tournament`](/subgraph/objects/tournament)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TournamentPlayer_filter`](/subgraph/inputs/tournament-player-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TournamentPlayer`](/subgraph/objects/tournament-player)  <Badge class="badge badge--secondary" text="object"/>
 

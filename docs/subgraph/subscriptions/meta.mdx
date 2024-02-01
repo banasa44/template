@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: big-int
-title: BigInt
+id: meta
+title: _meta
 ---
 
 
@@ -41,19 +41,33 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Access to subgraph metadata
 
 
 ```graphql
-scalar BigInt
+_meta(
+  block: Block_height
+): _Meta_
 ```
 
 
 
 
+### Arguments
+
+#### [<code style={{ fontWeight: 'normal' }}>_meta.<b>block</b></code>](#)<Bullet />[`Block_height`](/subgraph/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+### Type
+
+#### [`_Meta_`](/subgraph/objects/meta) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The type for the top-level _meta field
+> 
 
 
-### Member Of
-
-[`Tournament_filter`](/subgraph/inputs/tournament-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Tournament`](/subgraph/objects/tournament)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TournamentPlayer_filter`](/subgraph/inputs/tournament-player-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TournamentPlayer`](/subgraph/objects/tournament-player)  <Badge class="badge badge--secondary" text="object"/>
 

@@ -1,0 +1,160 @@
+---
+pagination_next: null
+pagination_prev: null
+id: tournament-player-order-by
+title: TournamentPlayer_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum TournamentPlayer_orderBy {
+  id
+  tournamentID
+  tournamentID__id
+  tournamentID__initDate
+  tournamentID__endDate
+  tournamentID__deFiBridgeAddress
+  tournamentID__maxParticipants
+  tournamentID__enrollmentAmount
+  tournamentID__totalCollectedAmount
+  tournamentID__numParticipant
+  player
+  player__id
+  scoreNumber
+  blockTimestamp
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID__initDate</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID__endDate</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID__deFiBridgeAddress</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID__maxParticipants</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID__enrollmentAmount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID__totalCollectedAmount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>tournamentID__numParticipant</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>player</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>player__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>scoreNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_orderBy.<b>blockTimestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+### Member Of
+
+[`tournamentPlayers`](/subgraph/queries/tournament-players)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`tournamentPlayers`](/subgraph/subscriptions/tournament-players)  <Badge class="badge badge--secondary" text="subscription"/>
+

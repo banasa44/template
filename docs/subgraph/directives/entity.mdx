@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: big-int
-title: BigInt
+id: entity
+title: entity
 ---
 
 
@@ -41,19 +41,15 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Marks the GraphQL type as indexable entity.  Each type that should be an entity is required to be annotated with this directive.
 
 
 ```graphql
-scalar BigInt
+directive @entity on OBJECT
 ```
 
 
 
 
 
-
-### Member Of
-
-[`Tournament_filter`](/subgraph/inputs/tournament-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Tournament`](/subgraph/objects/tournament)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TournamentPlayer_filter`](/subgraph/inputs/tournament-player-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TournamentPlayer`](/subgraph/objects/tournament-player)  <Badge class="badge badge--secondary" text="object"/>
 

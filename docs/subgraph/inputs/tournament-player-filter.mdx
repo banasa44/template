@@ -1,0 +1,545 @@
+---
+pagination_next: null
+pagination_prev: null
+id: tournament-player-filter
+title: TournamentPlayer_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input TournamentPlayer_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  tournamentID: String
+  tournamentID_not: String
+  tournamentID_gt: String
+  tournamentID_lt: String
+  tournamentID_gte: String
+  tournamentID_lte: String
+  tournamentID_in: [String!]
+  tournamentID_not_in: [String!]
+  tournamentID_contains: String
+  tournamentID_contains_nocase: String
+  tournamentID_not_contains: String
+  tournamentID_not_contains_nocase: String
+  tournamentID_starts_with: String
+  tournamentID_starts_with_nocase: String
+  tournamentID_not_starts_with: String
+  tournamentID_not_starts_with_nocase: String
+  tournamentID_ends_with: String
+  tournamentID_ends_with_nocase: String
+  tournamentID_not_ends_with: String
+  tournamentID_not_ends_with_nocase: String
+  tournamentID_: Tournament_filter
+  player: String
+  player_not: String
+  player_gt: String
+  player_lt: String
+  player_gte: String
+  player_lte: String
+  player_in: [String!]
+  player_not_in: [String!]
+  player_contains: String
+  player_contains_nocase: String
+  player_not_contains: String
+  player_not_contains_nocase: String
+  player_starts_with: String
+  player_starts_with_nocase: String
+  player_not_starts_with: String
+  player_not_starts_with_nocase: String
+  player_ends_with: String
+  player_ends_with_nocase: String
+  player_not_ends_with: String
+  player_not_ends_with_nocase: String
+  player_: Player_filter
+  scoreNumber: BigInt
+  scoreNumber_not: BigInt
+  scoreNumber_gt: BigInt
+  scoreNumber_lt: BigInt
+  scoreNumber_gte: BigInt
+  scoreNumber_lte: BigInt
+  scoreNumber_in: [BigInt!]
+  scoreNumber_not_in: [BigInt!]
+  blockTimestamp: BigInt
+  blockTimestamp_not: BigInt
+  blockTimestamp_gt: BigInt
+  blockTimestamp_lt: BigInt
+  blockTimestamp_gte: BigInt
+  blockTimestamp_lte: BigInt
+  blockTimestamp_in: [BigInt!]
+  blockTimestamp_not_in: [BigInt!]
+  _change_block: BlockChangedFilter
+  and: [TournamentPlayer_filter]
+  or: [TournamentPlayer_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>id</b></code>](#)<Bullet />[`ID`](/subgraph/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/subgraph/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/subgraph/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/subgraph/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/subgraph/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/subgraph/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/subgraph/scalars/id) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/subgraph/scalars/id) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_not</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_gt</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_lt</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_gte</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_lte</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_in</b></code>](#)<Bullet />[`[String!]`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_not_in</b></code>](#)<Bullet />[`[String!]`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_contains</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_contains_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_not_contains</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_not_contains_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_starts_with</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_starts_with_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_not_starts_with</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_ends_with</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_ends_with_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_not_ends_with</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>tournamentID_</b></code>](#)<Bullet />[`Tournament_filter`](/subgraph/inputs/tournament-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_not</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_gt</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_lt</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_gte</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_lte</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_in</b></code>](#)<Bullet />[`[String!]`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_not_in</b></code>](#)<Bullet />[`[String!]`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_contains</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_contains_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_not_contains</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_not_contains_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_starts_with</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_starts_with_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_not_starts_with</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_ends_with</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_ends_with_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_not_ends_with</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>player_</b></code>](#)<Bullet />[`Player_filter`](/subgraph/inputs/player-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>scoreNumber</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>scoreNumber_not</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>scoreNumber_gt</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>scoreNumber_lt</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>scoreNumber_gte</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>scoreNumber_lte</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>scoreNumber_in</b></code>](#)<Bullet />[`[BigInt!]`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>scoreNumber_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>blockTimestamp</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>blockTimestamp_not</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>blockTimestamp_gt</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>blockTimestamp_lt</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>blockTimestamp_gte</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>blockTimestamp_lte</b></code>](#)<Bullet />[`BigInt`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>blockTimestamp_in</b></code>](#)<Bullet />[`[BigInt!]`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>blockTimestamp_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/subgraph/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/subgraph/inputs/block-changed-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>and</b></code>](#)<Bullet />[`[TournamentPlayer_filter]`](/subgraph/inputs/tournament-player-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TournamentPlayer_filter.<b>or</b></code>](#)<Bullet />[`[TournamentPlayer_filter]`](/subgraph/inputs/tournament-player-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member Of
+
+[`Player_filter`](/subgraph/inputs/player-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Tournament_filter`](/subgraph/inputs/tournament-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TournamentPlayer_filter`](/subgraph/inputs/tournament-player-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`tournamentPlayers`](/subgraph/queries/tournament-players)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`tournamentPlayers`](/subgraph/subscriptions/tournament-players)  <Badge class="badge badge--secondary" text="subscription"/>
+

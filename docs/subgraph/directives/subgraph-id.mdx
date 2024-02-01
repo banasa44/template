@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: deprecated
-title: deprecated
+id: subgraph-id
+title: subgraphId
 ---
 
 
@@ -41,17 +41,13 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-Marks an element of a GraphQL schema as no longer supported.
+Defined a Subgraph ID for an object type
 
 
 ```graphql
-directive @deprecated(
-  reason: String = "No longer supported"
-) on 
-  | FIELD_DEFINITION
-  | ARGUMENT_DEFINITION
-  | INPUT_FIELD_DEFINITION
-  | ENUM_VALUE
+directive @subgraphId(
+  id: String!
+) on OBJECT
 ```
 
 
@@ -59,10 +55,10 @@ directive @deprecated(
 
 ### Arguments
 
-#### [<code style={{ fontWeight: 'normal' }}>deprecated.<b>reason</b></code>](#)<Bullet />[`String`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>subgraphId.<b>id</b></code>](#)<Bullet />[`String!`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https://commonmark.org/).
+> 
 > 
 
 

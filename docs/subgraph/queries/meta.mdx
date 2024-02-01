@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: specified-by
-title: specifiedBy
+id: meta
+title: _meta
 ---
 
 
@@ -41,13 +41,13 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-Exposes a URL that specifies the behavior of this scalar.
+Access to subgraph metadata
 
 
 ```graphql
-directive @specifiedBy(
-  url: String!
-) on SCALAR
+_meta(
+  block: Block_height
+): _Meta_
 ```
 
 
@@ -55,10 +55,18 @@ directive @specifiedBy(
 
 ### Arguments
 
-#### [<code style={{ fontWeight: 'normal' }}>specifiedBy.<b>url</b></code>](#)<Bullet />[`String!`](/subgraph/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>_meta.<b>block</b></code>](#)<Bullet />[`Block_height`](/subgraph/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
 > 
 > 
-> The URL that specifies the behavior of this scalar.
+> 
+> 
+
+### Type
+
+#### [`_Meta_`](/subgraph/objects/meta) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The type for the top-level _meta field
 > 
 
 

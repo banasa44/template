@@ -1,11 +1,10 @@
-schema: "./introspection/schema.graphql"
+schema: "https://api.studio.thegraph.com/query/63158/defismarttournaments/v1.6-fix4"
 extensions:
   graphql-markdown:
     rootPath: ./docs
-    baseURL: "/"
-    homepage: "static/index.md"
+    baseURL: "subgraph"
     loaders:
-      SchemaLoader: "@graphql-tools/graphql-file-loader"
+      UrlLoader: "@graphql-tools/url-loader"
     docOptions:
       frontMatter:
         pagination_next: null
