@@ -1,4 +1,4 @@
-schema: "https://api.studio.thegraph.com/query/63158/defismarttournaments/v1.6-fix4"
+schema: "https://api.studio.thegraph.com/query/63158/defismarttournaments/version/latest"
 extensions:
   graphql-markdown:
     rootPath: ./docs

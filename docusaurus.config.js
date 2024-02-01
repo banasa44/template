@@ -7,15 +7,24 @@ const lightCodeTheme = themes.github,
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My GraphQL documentation",
-  tagline: "GraphQL-Markdown is cool",
-  url: "https://your-docusaurus-test-site.com",
+  title: "Aragon Developer Portal",
+  tagline: "Let's build cool sh*t together",
+  url: "https://devs.aragon.org",
   baseUrl: "/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
-  organizationName: "graphql-markdown", // Usually your GitHub org/user name.
-  projectName: "graphql-markdown-template", // Usually your repo name.
+  onBrokenLinks: "ignore",
+  onBrokenMarkdownLinks: "ignore",
+  favicon: "img/Aragon-logo-circle.png",
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: "Aragon", // Usually your GitHub org/user name.
+  projectName: "Aragon Developer Portal", // Usually your repo name.
+
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
+
   plugins: ["@graphql-markdown/docusaurus"],
   presets: [
     [
@@ -26,7 +35,7 @@ const config = {
         docs: {
           include: ["**/*.md", "**/*.mdx"],
           routeBasePath: "/",
-          sidebarPath: "./sidebars.js",
+          sidebarPath: require.resolve("./sidebars.js"),
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -39,16 +48,15 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "GraphQL-Markdown",
         logo: {
-          alt: "graphql-markdown",
-          src: "img/graphql-markdown.svg",
+          alt: "Aragon",
+          src: "img/logo-light.png",
         },
         items: [
           {
-            href: "https://github.com/graphql-markdown/graphql-markdown",
-            label: "GitHub",
-            position: "right",
+            to: "/subgraph", // adjust the location depending on your baseURL (see configuration)
+            label: "Subgraph Schema", // change the label with yours
+            position: "left",
           },
         ],
       },
