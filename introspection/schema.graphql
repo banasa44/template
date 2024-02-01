@@ -1,0 +1,15 @@
+"this is bigint description"
+scalar BigInt
+scalar Bytes
+
+type Query {
+  Tournament: Tournament
+}
+"this is Tournament entity description"
+type Tournament {
+  id: ID!
+  initDate: BigInt!
+  endDate: BigInt!
+  deFiBridgeAddress: Bytes!
+  maxParticipants: Int!
+}

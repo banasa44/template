@@ -16,7 +16,19 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "graphql-markdown", // Usually your GitHub org/user name.
   projectName: "graphql-markdown-template", // Usually your repo name.
-  plugins: ["@graphql-markdown/docusaurus"],
+  plugins: [
+    [
+      "@graphql-markdown/docusaurus",
+      {
+        schema: "./introspection/schema.graphql",
+        rootPath: "./docs", // docs will be generated under './docs/subgraph' (rootPath/baseURL)
+        baseURL: "subgraph",
+        loaders: {
+          GraphQLFileLoader: "@graphql-tools/graphql-file-loader", // local file schema
+        },
+      },
+    ],
+  ],
   presets: [
     [
       "classic",
@@ -29,9 +41,9 @@ const config = {
         },
         theme: {
           customCss: "./src/css/custom.css",
-        }
-      })
-    ]
+        },
+      }),
+    ],
   ],
 
   themeConfig:
@@ -41,26 +53,26 @@ const config = {
         title: "GraphQL-Markdown",
         logo: {
           alt: "graphql-markdown",
-          src: "img/graphql-markdown.svg"
+          src: "img/graphql-markdown.svg",
         },
         items: [
           {
             href: "https://github.com/graphql-markdown/graphql-markdown",
             label: "GitHub",
-            position: "right"
-          }
-        ]
+            position: "right",
+          },
+        ],
       },
       footer: {
         style: "light",
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} My Website, Inc. Built with GraphQL-Markdown & Docusaurus.`
+        copyright: `Copyright © ${new Date().getFullYear()} My Website, Inc. Built with GraphQL-Markdown & Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme
-      }
-    })
+        darkTheme: darkCodeTheme,
+      },
+    }),
 };
 
 module.exports = config;
